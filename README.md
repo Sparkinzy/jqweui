@@ -26,10 +26,6 @@ jQuery WeUI 是专为微信公众账号开发而设计的一个简洁而强大�
 
 - `master` 主分支，正式发布的代码才会进入master分支
 - `build` 包含全部编译后代码的分支，和 `master` 分支同步，但是会包含 `dist` 目录
-- `dev` 开发分支
-- `gh-pages` 文档主分支
-- `gh-pages-dev` 文档的开发分支
-
  
 
 # LICENSE

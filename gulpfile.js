@@ -11,7 +11,7 @@ var cssmin = require('gulp-cssmin');
 
 var pkg = require("./package.json");
 
-var banner = 
+var banner =
 "/** \n\
 * jQuery WeUI V" + pkg.version + " \n\
 * By 言川\n\
@@ -27,49 +27,19 @@ gulp.task('js', function(cb) {
   };
 
   gulp.src([
+    './src/js/jquery-extend.js',
+    './src/js/device.js',
+    './src/js/picker.js',
+    './src/js/popup.js',
     './src/js/city-data.js',
     './src/js/city-picker.js'
   ])
     .pipe(concat({ path: 'city-picker.js'}))
-    .pipe(gulp.dest('./dist/js/'))
-    .on("end", end);
-
-  gulp.src([
-    './src/js/swiper.jquery.js',
-    './src/js/swiper-wrap.js',
-    './src/js/photos.js'
-  ])
-    .pipe(concat({ path: 'swiper.js'}))
-    .pipe(gulp.dest('./dist/js/'))
-    .on("end", end);
-
-  gulp.src([
-    './src/js/jquery-extend.js',
-    './src/js/template7.js',
-    './src/js/hammer.js',
-    './src/js/modal.js',
-    './src/js/toast.js',
-    './src/js/action.js',
-    './src/js/pull-to-refresh.js',
-    './src/js/infinite.js',
-    './src/js/tab.js',
-    './src/js/search-bar.js',
-    './src/js/device.js',
-    './src/js/picker.js',
-    './src/js/select.js',
-    './src/js/calendar.js',
-    './src/js/datetime-picker.js',
-    './src/js/popup.js',
-    './src/js/notification.js',
-    './src/js/toptip.js',
-    './src/js/slider.js'
-  ])
-    .pipe(concat({ path: 'jquery-weui.js'}))
     .pipe(header(banner))
     .pipe(gulp.dest('./dist/js/'))
     .on("end", end);
 
-  
+
 });
 
 gulp.task('uglify', ["js"], function() {
